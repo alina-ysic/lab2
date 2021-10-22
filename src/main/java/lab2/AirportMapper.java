@@ -11,7 +11,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
     @Override
     protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
         System.out.println("A " + key);
-        
+        context.write(new Text("a"), new IntWritable(2));
         super.map(key, value, context);
     }
 }
