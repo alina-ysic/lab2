@@ -1,4 +1,7 @@
+package FlightTime;
+
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
 
@@ -13,7 +16,8 @@ public class FlightTimeApp {
         Job job = Job.getInstance();
         job.setJarByClass(FlightTimeApp.class);
         job.setJobName("Flight Time");
-        MultipleInputs.addInputPath(job, new Path(args[0]));
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, mapper);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, mapper);
     }
 
 }
