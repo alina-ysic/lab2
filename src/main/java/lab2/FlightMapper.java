@@ -1,4 +1,4 @@
-package FlightTime;
+package lab2;
 
 import org.apache.hadoop.mapreduce.Mapper;
 
