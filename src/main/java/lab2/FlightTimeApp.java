@@ -6,6 +6,7 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
 
 import java.io.IOException;
 
@@ -22,7 +23,7 @@ public class FlightTimeApp {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        job.setPartitionerClass(null);
+        job.setPartitionerClass(HashPartitioner.class);
         job.setGroupingComparatorClass(null);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(null);
