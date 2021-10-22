@@ -16,6 +16,7 @@ public class FlightTimeApp {
         Job job = Job.getInstance();
         job.setJarByClass(FlightTimeApp.class);
         job.setJobName("Flight Time");
+        System.out.println("aaa");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         //FileOutputFormat.setOutputPath(job, new Path(args[2]));
