@@ -2,6 +2,7 @@ package lab2;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.Job;
@@ -24,7 +25,7 @@ public class FlightTimeApp {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(HashPartitioner.class);
-        job.setGroupingComparatorClass(null);
+        job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(null);
         job.setOutputKeyClass(Text.class);
