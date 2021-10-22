@@ -5,5 +5,5 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class AeroportMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 }

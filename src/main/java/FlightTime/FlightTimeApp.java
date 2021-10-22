@@ -17,7 +17,7 @@ public class FlightTimeApp {
         job.setJarByClass(FlightTimeApp.class);
         job.setJobName("Flight Time");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AeroportMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
     }
 
 }
