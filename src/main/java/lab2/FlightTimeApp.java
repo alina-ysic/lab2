@@ -28,6 +28,7 @@ public class FlightTimeApp {
         job.setPartitionerClass(HashPartitioner.class);
         job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
+
         job.setMapOutputKeyClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
