@@ -1,4 +1,6 @@
 package lab2;
 
-public class JoinReducer {
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class JoinReducer extends Reducer {
 }
