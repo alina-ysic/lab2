@@ -1,4 +1,6 @@
 package FlightTime;
 
-public class FlightMapper {
+import org.apache.hadoop.mapreduce.Mapper;
+
+public class FlightMapper extends Mapper {
 }
