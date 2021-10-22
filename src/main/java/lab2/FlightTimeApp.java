@@ -1,6 +1,7 @@
 package lab2;
 
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -27,7 +28,7 @@ public class FlightTimeApp {
         job.setPartitionerClass(HashPartitioner.class);
         job.setGroupingComparatorClass(WritableComparator.class);
         job.setReducerClass(JoinReducer.class);
-        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputKeyClass(LongWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
