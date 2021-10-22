@@ -4,7 +4,11 @@
     <artifactId>hadoop-examples</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-        ...
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.10.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
