@@ -1,2 +1,2 @@
-public class Flight {
+public class FlightTimeApp {
 }
